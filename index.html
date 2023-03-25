@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download some cool games!</title>
+</head>
+
+<body>
+    <script>
+        if (confirm("Do you want tab cloaking for school?")) {
+            let inFrame
+
+            try {
+                inFrame = window !== top
+            } catch (e) {
+                inFrame = true
+            }
+
+            if (!inFrame && !navigator.userAgent.includes("Firefox")) {
+                const popup = open("about:blank", "_blank")
+                if (!popup || popup.closed) {
+                    alert("Allow popups and redirects to hide this from showing up in your history.")
+                } else {
+                    const doc = popup.document
+                    const iframe = doc.createElement("iframe")
+                    const style = iframe.style
+                    const link = doc.createElement("link")
+
+                    doc.title = "My Drive - Google Drive"
+                    link.rel = "icon";
+                    link.href = "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png";
+                    iframe.src = location.href
+                    style.position = "fixed"
+                    style.top = style.bottom = style.left = style.right = 0
+                    style.border = style.outline = "none"
+                    style.width = style.height = "100%"
+
+                    doc.body.appendChild(iframe)
+                    location.replace("https://google.com")
+                }
+            }
+
+        }
+    </script>
+    <center>
+        <h1>
+            <h2>Game 1, Cookie clicker (Credit: https://github.com/ozh/cookieclicker)
+                <h3>Overview</h3>
+                <a href="cookieclicker.zip">Download</a>
+                <p>
+                    A version of cookie clicker if you can't <i>educate</i> yourself with the original link...
+                    Has lots of cool features. 
+                </p>
+            </h2>
+            <h2>Game 2
+                <h3>Overview</h3>
+            </h2>
+            <h2>Game 3
+                <h3>Overview</h3>
+            </h2>
+            <h2>Game 4
+                <h3>Overview</h3>
+            </h2>
+            <h2>Game 5
+                <h3>Overview</h3>
+            </h2>
+        </h1>
+    </center>
+</body>
+
+</html>
